@@ -5,10 +5,7 @@ import seed.SeedInitializer;
 import services.SavingsManagerService;
 import services.TransactionManagerService;
 
-import static seed.AccountsSeedData.checkingAccountA;
-import static seed.AccountsSeedData.checkingAccountB;
-import static seed.AccountsSeedData.savingsAccountA;
-import static seed.AccountsSeedData.savingsAccountB;
+import static seed.AccountsSeedData.*;
 
 public class BankingApplication {
 
@@ -36,12 +33,12 @@ public class BankingApplication {
         System.out.println("[Transaction Manager] 5. " + transactionManagerServiceInstance.checkFunds(checkingAccountB.getId()));
 
         // Uncomment the following lines if the withdrawal method is available in the TransactionManagerService
-        // System.out.println("[Transaction Manager] 6. " +
-        //         TransactionManagerServiceInstance.withdraw(
-        //                 checkingAccountC.getId(),
-        //                 new MoneyModel(5, CurrencyType.EUR)
-        //         )
-        // );
+         System.out.println("[Transaction Manager] 6. " +
+                 transactionManagerServiceInstance.withdraw(
+                         checkingAccountC.getId(),
+                         new MoneyModel(5, CurrencyType.EUR)
+                 )
+         );
 
         System.out.println("\n------------------------------------\n");
 
